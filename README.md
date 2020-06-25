@@ -32,15 +32,15 @@ https://github.com/nosvalds/come-on-you-team
 
 ### End Points
 
-#### `GET /come-on-you-team/matches`
+#### `GET /come-on-you-team/api/matches`
 
 All of the matches that have been played, with the latest match first.
 
-#### `GET /come-on-you-team/match/<id>`
+#### `GET /come-on-you-team/api/matches/<id>`
 
 The specified match
 
-#### `POST /come-on-you-team/match`
+#### `POST /come-on-you-team/api/matches`
 
 Save a new match of football
 
@@ -57,7 +57,7 @@ Save a new match of football
     - `won`: bool - has this team won?
 
 
-#### `DELETE /come-on-you-team/games/<id>`
+#### `DELETE /come-on-you-team/api/matches/<id>`
 
 Delete a game of football
 
