@@ -1,3 +1,68 @@
+# Come On You __! - Backend
+
+## Front End/Planning Here
+https://github.com/nosvalds/come-on-you-team
+
+### DB Structure
+#### Table
+- match
+  - id
+  - team_size
+  - team_a_name
+  - team_b_name
+  - team_a_score
+  - team_b_score
+  - timestamps
+
+### API
+
+### Standard Response
+
+- `id`
+- `team_size`: integer - number of players on each team
+- `teamA`: object - team A object
+    - `name`: string - name
+    - `score`: string - score
+    - `won`: bool - has this team won?
+- `teamB`: object - team B object
+    - `name`: string - name
+    - `score`: string - score
+    - `won`: bool - has this team won?
+
+### End Points
+
+#### `GET /come-on-you-team/matches`
+
+All of the matches that have been played, with the latest match first.
+
+#### `GET /come-on-you-team/match/<id>`
+
+The specified match
+
+#### `POST /come-on-you-team/match`
+
+Save a new match of football
+
+##### Request
+
+- `team_size`: integer - number of players on each team
+- `teamA`: object - team A object
+    - `name`: string - name
+    - `score`: string - score
+    - `won`: bool - has this team won?
+- `teamB`: object - team B object
+    - `name`: string - name
+    - `score`: string - score
+    - `won`: bool - has this team won?
+
+
+#### `DELETE /come-on-you-team/games/<id>`
+
+Delete a game of football
+
+
+
+
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 
 <p align="center">
