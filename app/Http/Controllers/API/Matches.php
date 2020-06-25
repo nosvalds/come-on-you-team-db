@@ -38,7 +38,8 @@ class Matches extends Controller
      */
     public function show(Match $match)
     {
-        //
+        // return the specific match
+        return $match;
     }
 
     /**

@@ -19,7 +19,12 @@ use Illuminate\Support\Facades\Route;
 // });
 
 // all of the routes are in the /matches end-point
-Route::group(["prefix" => "matches"], function () {
+Route::group(['prefix' => 'matches'], function () {
     // GET /matches: show all matches
-    Route::get('/','API\Matches@index');
+    Route::get('','API\Matches@index');
+
+    Route::group(['prefix' => '{match}'], function () {
+        Route::get('','API\Matches@show');
+
+    });
 });
