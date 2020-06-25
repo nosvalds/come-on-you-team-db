@@ -60,8 +60,12 @@ class Matches extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Match $match)
     {
-        //
+        // delete the match from the DB
+        $match->delete();
+
+        // use a 204 code as there is no content in the response
+        return response(null, 204);
     }
 }

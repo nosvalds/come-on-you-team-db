@@ -23,8 +23,12 @@ Route::group(['prefix' => 'matches'], function () {
     // GET /matches: show all matches
     Route::get('','API\Matches@index');
 
+    // /matches/id routes
     Route::group(['prefix' => '{match}'], function () {
+        // GET /matches/id: return the match with the provided id
         Route::get('','API\Matches@show');
-
+        
+         // DELETE /matches/id: delete match with the provided id
+        Route::delete('','API\Matches@destroy');
     });
 });
