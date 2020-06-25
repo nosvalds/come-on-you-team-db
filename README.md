@@ -12,6 +12,7 @@ https://github.com/nosvalds/come-on-you-team
   - team_b_name
   - team_a_score
   - team_b_score
+  - game_complete
   - timestamps
 
 ### API
