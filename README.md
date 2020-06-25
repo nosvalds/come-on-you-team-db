@@ -24,9 +24,11 @@ https://github.com/nosvalds/come-on-you-team
 - `teamA`: object - team A object
     - `name`: string - name
     - `score`: string - score
+    - `won`: bool - has this team won?
 - `teamB`: object - team B object
     - `name`: string - name
     - `score`: string - score
+    - `won`: bool - has this team won?
 - `game_complete`: bool - is the game over?
 
 ### End Points
@@ -46,14 +48,11 @@ Save a new match of football
 ##### Request
 
 - `team_size`: integer - number of players on each team
-- `teamA`: object - team A object
-    - `name`: string - name
-    - `score`: string - score
-    - `won`: bool - has this team won?
-- `teamB`: object - team B object
-    - `name`: string - name
-    - `score`: string - score
-    - `won`: bool - has this team won?
+- `team_a_name`: string - team A name
+- `team_b_name`: string - team B name
+- `team_a_score`: integer - team A score
+- `team_b_score`: integer - team B score
+- `game_complete`: bool - is the game complete?
 
 
 #### `DELETE /come-on-you-team/api/matches/<id>`

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Match;
 use App\Http\Resources\API\MatchResource;
+use App\Http\Requests\API\MatchRequest;
 
 class Matches extends Controller
 {
@@ -26,7 +27,7 @@ class Matches extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(MatchRequest $request)
     {
         // get all the request data
         // returns an array of all the data the user sent
@@ -56,7 +57,7 @@ class Matches extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(MatchRequest $request, $id)
     {
         //
     }
