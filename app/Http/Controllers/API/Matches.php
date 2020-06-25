@@ -17,7 +17,7 @@ class Matches extends Controller
     public function index()
     {
         // get all the matches
-        return Match::all();
+        return MatchResource::collection(Match::all());
     }
 
     /**
