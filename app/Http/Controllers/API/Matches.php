@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Match;
+use App\Http\Resources\API\MatchResource;
 
 class Matches extends Controller
 {
@@ -33,7 +34,7 @@ class Matches extends Controller
 
         // create a match and store in the DB
         // return this as JSON to the requestor
-        return Match::create($data);
+        return new MatchResource(Match::create($data));
     }
 
     /**
@@ -45,7 +46,7 @@ class Matches extends Controller
     public function show(Match $match)
     {
         // return the specific match
-        return $match;
+        return new MatchResource($match);
     }
 
     /**
