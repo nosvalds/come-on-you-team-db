@@ -27,7 +27,13 @@ class Matches extends Controller
      */
     public function store(Request $request)
     {
-        //
+        // get all the request data
+        // returns an array of all the data the user sent
+        $data = $request->all();
+
+        // create a match and store in the DB
+        // return this as JSON to the requestor
+        return Match::create($data);
     }
 
     /**

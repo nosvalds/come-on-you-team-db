@@ -23,6 +23,9 @@ Route::group(['prefix' => 'matches'], function () {
     // GET /matches: show all matches
     Route::get('','API\Matches@index');
 
+    // POST /matches: save a new match
+    Route::post('','API\Matches@store');
+
     // /matches/id routes
     Route::group(['prefix' => '{match}'], function () {
         // GET /matches/id: return the match with the provided id
