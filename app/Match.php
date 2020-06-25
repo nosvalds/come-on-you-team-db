@@ -15,4 +15,22 @@ class Match extends Model
         'team_b_score',
         'game_complete',
     ];
+
+    public function teamAWon() : bool
+    {
+        return $this->game_complete 
+            && $this->team_a_score > $this->team_b_score;
+    }
+
+    public function teamBWon() : bool
+    {
+        return $this->game_complete 
+            && $this->team_b_score > $this->team_a_score;
+    }
+
+    public function tie() : bool
+    {
+        return $this->game_complete 
+        && $this->team_b_score === $this->team_a_score;
+    }
 };

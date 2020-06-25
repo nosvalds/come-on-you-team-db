@@ -24,11 +24,10 @@ https://github.com/nosvalds/come-on-you-team
 - `teamA`: object - team A object
     - `name`: string - name
     - `score`: string - score
-    - `won`: bool - has this team won?
 - `teamB`: object - team B object
     - `name`: string - name
     - `score`: string - score
-    - `won`: bool - has this team won?
+- `game_complete`: bool - is the game over?
 
 ### End Points
 

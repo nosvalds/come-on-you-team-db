@@ -20,12 +20,15 @@ class MatchResource extends JsonResource
             'teamA' => [
                 'name' => $this->team_a_name,
                 'score' => (int) $this->team_a_score,
+                'won' => (bool) $this->teamAWon(),
             ],
             'teamB' => [
                 'name' => $this->team_b_name,
                 'score' => (int) $this->team_b_score,
+                'won' => (bool) $this->teamBWon(),
             ],
             'game_complete' => (bool) $this->game_complete,
+            'tie' => (bool) $this->tie(),
         ];
     }
 }
