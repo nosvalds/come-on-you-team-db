@@ -15,6 +15,20 @@ https://github.com/nosvalds/come-on-you-team
   - game_complete
   - timestamps
 
++---------------+---------------------+------+-----+---------+----------------+
+| Field         | Type                | Null | Key | Default | Extra          |
++---------------+---------------------+------+-----+---------+----------------+
+| id            | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| team_size     | int(11)             | NO   |     | 5       |                |
+| team_a_name   | varchar(50)         | NO   |     | Team A  |                |
+| team_b_name   | varchar(50)         | NO   |     | Team B  |                |
+| team_a_score  | int(11)             | NO   |     | 0       |                |
+| team_b_score  | int(11)             | NO   |     | 0       |                |
+| game_complete | tinyint(1)          | NO   |     | 0       |                |
+| created_at    | timestamp           | YES  |     | NULL    |                |
+| updated_at    | timestamp           | YES  |     | NULL    |                |
++---------------+---------------------+------+-----+---------+----------------+
+
 ### API
 
 ### Standard Response
@@ -59,11 +73,9 @@ Save a new match of football
 
 Delete a game of football
 
-
 # Laravel Docs
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
-
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
