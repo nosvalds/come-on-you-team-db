@@ -57,9 +57,14 @@ class Matches extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(MatchRequest $request, $id)
+    public function update(MatchRequest $request, Match $match)
     {
-        //
+        // get the request data
+        $data = $request->all();
+
+        $match->fill($data)->save();
+
+        return new MatchResource($match);
     }
 
     /**

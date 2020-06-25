@@ -30,6 +30,9 @@ Route::group(['prefix' => 'matches'], function () {
     Route::group(['prefix' => '{match}'], function () {
         // GET /matches/id: return the match with the provided id
         Route::get('','API\Matches@show');
+
+        // PUT /matches/id: update the match with the provided request
+        Route::put('','API\Matches@update');
         
          // DELETE /matches/id: delete match with the provided id
         Route::delete('','API\Matches@destroy');
