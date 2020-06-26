@@ -71,6 +71,12 @@ Save a new match of football
 
 #### `DELETE /come-on-you-team/api/matches/<id>`
 
+
+## Deployment
+
+### Heroku
+https://whispering-depths-49610.herokuapp.com/ 
+
 Delete a game of football
 
 # Laravel Docs
