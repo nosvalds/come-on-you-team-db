@@ -1,5 +1,81 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# Come On You __! - Backend
 
+## Front End/Planning Here
+https://github.com/nosvalds/come-on-you-team
+
+### DB Structure
+#### Table
+- match
+  - id
+  - team_size
+  - team_a_name
+  - team_b_name
+  - team_a_score
+  - team_b_score
+  - game_complete
+  - timestamps
+
++---------------+---------------------+------+-----+---------+----------------+
+| Field         | Type                | Null | Key | Default | Extra          |
++---------------+---------------------+------+-----+---------+----------------+
+| id            | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
+| team_size     | int(11)             | NO   |     | 5       |                |
+| team_a_name   | varchar(50)         | NO   |     | Team A  |                |
+| team_b_name   | varchar(50)         | NO   |     | Team B  |                |
+| team_a_score  | int(11)             | NO   |     | 0       |                |
+| team_b_score  | int(11)             | NO   |     | 0       |                |
+| game_complete | tinyint(1)          | NO   |     | 0       |                |
+| created_at    | timestamp           | YES  |     | NULL    |                |
+| updated_at    | timestamp           | YES  |     | NULL    |                |
++---------------+---------------------+------+-----+---------+----------------+
+
+### API
+
+### Standard Response
+
+- `id`
+- `team_size`: integer - number of players on each team
+- `teamA`: object - team A object
+    - `name`: string - name
+    - `score`: string - score
+    - `won`: bool - has this team won?
+- `teamB`: object - team B object
+    - `name`: string - name
+    - `score`: string - score
+    - `won`: bool - has this team won?
+- `game_complete`: bool - is the game over?
+
+### End Points
+
+#### `GET /come-on-you-team/api/matches`
+
+All of the matches that have been played, with the latest match first.
+
+#### `GET /come-on-you-team/api/matches/<id>`
+
+The specified match
+
+#### `POST /come-on-you-team/api/matches`
+
+Save a new match of football
+
+##### Request
+
+- `team_size`: integer - number of players on each team
+- `team_a_name`: string - team A name
+- `team_b_name`: string - team B name
+- `team_a_score`: integer - team A score
+- `team_b_score`: integer - team B score
+- `game_complete`: bool - is the game complete?
+
+
+#### `DELETE /come-on-you-team/api/matches/<id>`
+
+Delete a game of football
+
+# Laravel Docs
+
+<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>

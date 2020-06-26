@@ -14,6 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+
+// all of the routes are in the /matches end-point
+Route::group(['prefix' => 'matches'], function () {
+    // GET /matches: show all matches
+    Route::get('','API\Matches@index');
+
+    // POST /matches: save a new match
+    Route::post('','API\Matches@store');
+
+    // /matches/id routes
+    Route::group(['prefix' => '{match}'], function () {
+        // GET /matches/id: return the match with the provided id
+        Route::get('','API\Matches@show');
+
+        // PUT /matches/id: update the match with the provided request
+        Route::put('','API\Matches@update');
+        
+         // DELETE /matches/id: delete match with the provided id
+        Route::delete('','API\Matches@destroy');
+    });
 });
