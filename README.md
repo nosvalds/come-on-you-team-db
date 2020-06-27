@@ -73,6 +73,12 @@ Save a new match of football
 
 Delete a game of football
 
+## Deployment
+
+### Heroku
+https://whispering-depths-49610.herokuapp.com/ 
+
+
 # Laravel Docs
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
