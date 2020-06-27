@@ -17,8 +17,8 @@ class Matches extends Controller
      */
     public function index()
     {
-        // get all the matches
-        return MatchResource::collection(Match::all());
+        // get all the matches, sort with newest at top
+        return MatchResource::collection(Match::all()->sortByDesc("updated_at"));
     }
 
     /**
