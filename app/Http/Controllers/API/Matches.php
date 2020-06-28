@@ -62,8 +62,10 @@ class Matches extends Controller
         // get the request data
         $data = $request->all();
 
+        // use fill to save it into the specified match
         $match->fill($data)->save();
 
+        // send back the updated match
         return new MatchResource($match);
     }
 
@@ -78,7 +80,7 @@ class Matches extends Controller
         // delete the match from the DB
         $match->delete();
 
-        // use a 204 code as there is no content in the response
+        // return a 204 code as there is no content in the response
         return response(null, 204);
     }
 }

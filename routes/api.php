@@ -14,10 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::middleware('auth:api')->get('/user', function (Request $request) {
-//     return $request->user();
-// });
-
 // all of the routes are in the /matches end-point
 Route::group(['prefix' => 'matches'], function () {
     // GET /matches: show all matches

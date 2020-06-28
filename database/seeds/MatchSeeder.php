@@ -11,7 +11,7 @@ class MatchSeeder extends Seeder
      */
     public function run()
     {
-        // create 15 matches when DB is seeded
+        // create 15 matches using the factory when DB is seeded
         factory(App\Match::class, 15)->create();
     }
 }
