@@ -59,7 +59,6 @@ Save a new match of football
 
 #### `DELETE /come-on-you-team/api/matches/<id>`
 
-<<<<<<< HEAD
 Delete a match of football
 
 ## Running this Project Yourself:
@@ -118,14 +117,10 @@ art migrate:fresh --seed
 - You should see the following homepage which means your virtual machine is up and running!
 ![](COY_API_index_page.png)
 
-=======
-Delete a game of football
->>>>>>> parent of 389b2f5... Revert DB setup for heroku on development branch, for local testing/development
 
 ## Deployment
 
 ### Heroku
-<<<<<<< HEAD
 https://come-on-you-team.herokuapp.com
 
 #### Starting from scratch
@@ -156,10 +151,6 @@ git revert 389b2f5 # commit that changes DB config for heroku
 git checkout master
 git merge development-merge-prep
 ```
-=======
-https://whispering-depths-49610.herokuapp.com/ 
-
->>>>>>> parent of 389b2f5... Revert DB setup for heroku on development branch, for local testing/development
 
 # Laravel Docs
 
