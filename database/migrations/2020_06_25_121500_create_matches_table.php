@@ -13,6 +13,7 @@ class CreateMatchesTable extends Migration
      */
     public function up()
     {
+        // create the matches table in the database. define column names, data types, and defaults
         Schema::create('matches', function (Blueprint $table) {
             $table->id();
             $table->integer('team_size')->default(5);
