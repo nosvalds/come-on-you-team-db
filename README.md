@@ -123,6 +123,24 @@ art migrate:fresh --seed
 ### Heroku
 https://come-on-you-team.herokuapp.com
 
+#### Starting from scratch
+1. Sign up for a Heroku account
+2. Install the CLI tools and log in from the terminal
+  - https://devcenter.heroku.com/articles/getting-started-with-php
+  - https://devcenter.heroku.com/categories/command-line
+3. Follow these instructions to get deploy the laravel app
+  - https://devcenter.heroku.com/articles/getting-started-with-laravel
+4. Follow these instructions to get the Database working
+  - https://mattstauffer.com/blog/laravel-on-heroku-using-a-mysql-database/
+5. You might run into an error with specified key being too long
+  - Fix here: https://laravel-news.com/laravel-5-4-key-too-long-error/
+
+#### Deploying updates once setup is done
+1. Pull Request and Merge changes from development branch into the master branch
+2. Push changes to Heroku
+```bash
+git push heroku master
+``` 
 
 # Laravel Docs
 
