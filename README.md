@@ -142,6 +142,16 @@ https://come-on-you-team.herokuapp.com
 git push heroku master
 ``` 
 
+#### Preserving deployment-specific changes in master
+- When merging development into master
+```bash
+git checkout development
+git checkout -b development-merge-prep
+git revert 389b2f5 # commit that changes DB config for heroku
+git checkout Master
+git merge Development-merge-prep
+```
+
 # Laravel Docs
 
 <p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
