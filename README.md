@@ -5,7 +5,7 @@ https://github.com/nosvalds/come-on-you-team
 
 ### DB Structure
 #### Table
-- match
+- matches
   - id
   - team_size
   - team_a_name
@@ -15,19 +15,7 @@ https://github.com/nosvalds/come-on-you-team
   - game_complete
   - timestamps
 
-+---------------+---------------------+------+-----+---------+----------------+
-| Field         | Type                | Null | Key | Default | Extra          |
-+---------------+---------------------+------+-----+---------+----------------+
-| id            | bigint(20) unsigned | NO   | PRI | NULL    | auto_increment |
-| team_size     | int(11)             | NO   |     | 5       |                |
-| team_a_name   | varchar(50)         | NO   |     | Team A  |                |
-| team_b_name   | varchar(50)         | NO   |     | Team B  |                |
-| team_a_score  | int(11)             | NO   |     | 0       |                |
-| team_b_score  | int(11)             | NO   |     | 0       |                |
-| game_complete | tinyint(1)          | NO   |     | 0       |                |
-| created_at    | timestamp           | YES  |     | NULL    |                |
-| updated_at    | timestamp           | YES  |     | NULL    |                |
-+---------------+---------------------+------+-----+---------+----------------+
+![matches table](database_structure.png)
 
 ### API
 
@@ -71,13 +59,70 @@ Save a new match of football
 
 #### `DELETE /come-on-you-team/api/matches/<id>`
 
+Delete a match of football
+
+## Running this Project Yourself:
+
+1. Clone the git repository to your local machine by running the following command in your terminal. Or copy the project folder ( come-on-you-team-db )from google drive to your local machine.
+  - Use the ```development``` branch in git to run this project locally. The master branch has specific database setup for deployment to Heroku and will not run locally on a virtual machine
+
+```bash
+git clone git@github.com:nosvalds/come-on-you-team.git {project-directory}
+```
+
+2. In your terminal cd into the project directory and run the below composer command to install neccessary dependency packages
+```bash
+cd {project-directory}
+composer install
+```
+
+3. Set up homestead virtual machine.
+- Run the below command in the project directory
+```bash
+vendor/bin/homestead make
+```
+- This will create a Homestead.yaml file inside your project directory
+  - Inside this file edit the memory to be 512 
+    - ```memory: 512``` 
+
+4. Create the .env file
+- Run the below command in the project directory
+```bash
+cp .env.example .env
+```
+5. Spin up the virtual machine
+```bash
+vagrant up
+```
+
+6. Once the above is complete, ssh into the virtual machine and cd to the code directory
+```bash
+vagrant ssh
+cd code
+```
+
+7. Generate the app key, this will be set in your .env file
+```bash
+art key:generate
+```
+
+8. Run the MySQL table migrations to set up the database,
+  - You can omit the --seed if you'd like to start with a blank database, otherwise this will seed the database with test data using the ```MatchFactory.php``` and ```MatchSeeder.php```.
+
+```bash
+art migrate:fresh --seed
+```
+
+9. Navigate to http://homestead.test
+- You should see the following homepage which means your virtual machine is up and running!
+![](COY_API_index_page.png)
+
 
 ## Deployment
 
 ### Heroku
-https://whispering-depths-49610.herokuapp.com/ 
+https://come-on-you-team.herokuapp.com
 
-Delete a game of football
 
 # Laravel Docs
 
