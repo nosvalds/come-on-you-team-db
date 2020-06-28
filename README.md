@@ -148,8 +148,8 @@ git push heroku master
 git checkout development
 git checkout -b development-merge-prep
 git revert 389b2f5 # commit that changes DB config for heroku
-git checkout Master
-git merge Development-merge-prep
+git checkout master
+git merge development-merge-prep
 ```
 
 # Laravel Docs
